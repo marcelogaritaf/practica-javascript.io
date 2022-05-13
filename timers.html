@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var mostrar = function(){/// es otra forma de hacer las funciones, pero en funcionalidad es lo mismo 
+            alert("marcelo papi")
+        }
+        //mostrar = "marcelo rico"// se puede cambiar sin ningun problema
+
+        mostrar = () => {// otra forma de hacer las funciones 
+            alert("marcelo mi amorsh")
+        }
+     
+        setTimeout(() => { /// otra forma y la mas conviniente xq la funcion esta dentro del timeout
+            alert("marcelo mi amorsh")
+        }, 3000);//aqui se pone el tiempo a realizar 
+
+
+        mostrar = () => alert("marcelo mi mosh"); /// es igual al segundo ejemplo pero como solo tiene una linea de codigo a realizar no necesita de las {}
+
+
+        setTimeout(() => alert("marcelo mi mosh") , 3000); // aqui sucede lo mismo como solo se usa una linea de codigo no se necesitan las {}
+
+
+
+       var timer = setInterval(() => alert("marcelo es un papi usted lo sabe"), 2000);/// lo diferente de este esq hace q se repita un x tiempo a diferencia de que el settimeout solo lo muestra una vez
+       setTimeout(() => {
+           clearInterval(timer)// acaba con el timer 
+       }, 3 * 1000);// acaba con el timer despues de los 10s de estar mostrandose  
+
+
+        setTimeout(mostrar, 3000);//lo que hace es mostrar la funcion q tenga seleccionada con un tiempo a mostrar por ejemplo los 3000 == 3s
+
+
+        // function mostrar(){
+        //     alert("marcelo papi")
+        // }
+    </script>
+
+</body>
+</html>

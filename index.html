@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script src="main.js"></script> -->
+    <!-- ejemplo de operaciones en javascript -->
+    <!-- <script> 
+        var numero=10;
+        var numero2 = 10;
+        var suma = numero + numero2;
+        alert("La suma es de: " +suma);
+    </script>-->
+
+    <!-- ejemplo de condicionales -->
+    <!-- <script> 
+        var edad = prompt("Digite la edad");
+        var estatura = prompt("Digite la estatura");
+        if(edad >= 18 || estatura >= 1.50){
+            alert("cumple con la edad y la estatura puede ingresar");
+        }else{
+            alert("No puede ingresar no cumple con uno de los requisitos")
+        }
+    </script>-->
+
+
+    <!-- funciones 
+    <script>
+        // funcion calcular la superficie
+        function calcularSuperficie(ancho, alto){//parametros de los valores 
+            var resultado = ancho*alto;
+            return resultado;// se retorna el resultado realizado en la operacion 
+        }
+        function digitar(){//funcion para preguntar la informacion 
+            var ancho = prompt("Digite el ancho del territorio:");
+            var alto = prompt("Disgite el alto del territorio:");
+            // llamado de funcion a ejecutar
+            var calculo =  calcularSuperficie(ancho, alto);
+            alert("Superficio del territorio es: "+calculo);
+
+        }
+        digitar();
+        
+
+
+    </script>-->
+
+    <!-- practica 
+    <h1>Calculadora IMC</h1>
+    <form action="">
+       <label >Altura:</label> <br>
+       <input type="text" placeholder="altura" id="txtaltura"><br>
+       <label>Peso:</label><br>
+       <input type="text" placeholder="peso" id="txtPeso"><br>
+       <button id="btnCalcular">Calcular</button>
+    </form>
+    <script src="main.js"></script>-->
+
+  
+
+    
+    <script src="main.js"></script>
+    <!-- ciclos -->
+    <script>
+        /*while
+       var contador =0;
+       while (contador < 3) {
+           alert("valor: "+contador);
+           contador ++;
+       }*/
+       //do while
+       /*do{
+        alert("valor: "+contador);
+        contador ++;
+       }while(contador <3);*/
+       
+       //ejecicio sumatoria de numero <= 10
+       /*var num = 0;
+       var contador =0;
+       //debugger; sirve para ver lo que la funcion de abajo esta haciendo 
+       while(contador<=10){
+           num +=contador;
+           contador++;
+        }
+        alert("la sumatoria es: "+num);*/
+
+        //for
+        /*var num=0;
+        for(var i =0; i<=10; i++){
+            if (i%2==0){
+                num+=i;
+            }
+        }
+        alert("la sumatoria de los numeros pares entre 0 y 10 es: "+num);*/
+
+        //matrices y arreglos
+        
+        // var nombre = [];
+        // //nombre[0]="marcelo";manera a pata de llenar un arreglo
+        // nombre.push("marcelo");///otra forma de mostrar sin los indeces 
+        // nombre.push("garita");
+        // nombre.push("fonseca");
+        // for(var i=0; i<=nombre.length; i++){
+        //     var names= nombre[i];
+        //     alert(names);
+        // }
+        // for(var names of nombre){//hace la misma ejecucion del pasado for pero de una forma más sencilla
+        //     alert(names);
+        // }
+    </script>
+      <!-- ejercicio de vectores 
+        <label>tarea:</label><input type="text" name="" id="txttarea">
+        <button id="btnagregar">agregar</button>
+        <div id="listado"
+        </div> -->
+        <!-- ejercicio objetos -->
+        <label for="">Nombre:</label> <br>
+        <input type="text" id="txtnombre" placeholder="Nombre"><br>
+        <label >Apellido:</label><br>
+        <input type="text" id="txtapellido" placeholder="Apellido"><br>
+        <label >Telefono</label><br>
+        <input type="text" id="txttel" placeholder="Telefono"><br>
+        <label for="">Correo Electronico</label><br>
+        <input type="text" id="txtcorreo" placeholder="Correo Electronico"><br> <br>
+        <button id="btn">Enviar</button><br><br>
+        <div id="listado">
+
+        </div>
+        <script>
+            window.onload=iniciar;
+            var personas = [];
+            function iniciar(){
+               var btn= document.getElementById("btn");
+                btn.addEventListener("click", agregar);
+            }
+            function agregar(){
+                //el .value al final es la representacion de "var nombre=txtnombre.value" en una forma mas simplificada y sencilla solo que con el nombre de la variable final
+                var nombre=document.getElementById("txtnombre").value;
+                var apellido=document.getElementById("txtapellido").value;
+                var tel = document.getElementById("txttel").value;
+                var correo = document.getElementById("txtcorreo").value;
+
+                var person={// se crea un objeto con la informacion utilizada 
+                    "nombre": nombre,
+                    "apellido": apellido,
+                    "tel": tel,
+                    "correo": correo
+                }
+                personas.push(person);// se crea el arreglo persona para rellenarlo con los datos del objeto person
+                // debugger;
+                mostrar();///se llama a la funcion para que muestre los datos cargados al div#listado
+            }
+            function mostrar(){
+                var listado = document.getElementById("listado");
+                var html = "";
+                for (var person of personas){
+                    html += person.nombre+ ' ' + person.apellido+ ' ' + person.tel + ' ' + person.correo + "<br>";// asi es como se puede conectar con la informacion del objeto y sus campos 
+                }
+                listado.innerHTML=html;//es como se "muestra la variable html a los campos corespondientes "
+            }
+        </script>
+        <!-- objetoos 
+        <script>
+            //un objeto puede tener de todo
+            var persona = {//objeto vacio
+                "nombre": "marcelo", 
+                "apellido": "Garita",
+                "tel": 83538689,
+                "correo": "mgaritaf@outlook.com",
+                "direccion": "heredia",
+                "empleo":{//para hacer subobjetos
+                    "nombre":"programador",
+                    "localidad": "costa rica"                 
+                }
+            }///toda la informacion del objeto persona
+            
+            alert(persona.empleo.nombre);//imprime los datos especificos del objeto
+            persona.nombre= "ignacio";//para cambiar en contenido del objeto en dicha posicion 
+            console.log(persona);
+            //console.log(persona.nombre);//no muestra el nombre de la persona
+            
+        </script>-->
+
+
+
+</body>
+</html>

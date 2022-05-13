@@ -1,0 +1,3 @@
+//DOM = el html incrustado en el javascript
+// puede ser un metodo de seleccion como lo es con document.getelementbyId ahi se estaria buscando el id de lo que se este buscando e igual con el document.getelementbytagname que busca todas las etiquetas dependiendo cual se esta buscando e igual con el document.queryselector ---> donde se puede llamar por los selectores de css ya sea: id, por el nombre de la etiqueta, o por el nombre de la clase 
+// con el document.getelementsbyid al buscar el nombre del id con uno .innerHTML = "se puede cambiar el texto o contenido que se encuentra en ese id"
