@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .reloj {
+        font-size: 80px;
+        color: #fff;
+        font-family: cursive;
+        text-align: center;
+        -webkit-animation: reloj 1s ease-in-out infinite alternate;
+        -moz-animation: reloj 1s ease-in-out infinite alternate;
+        animation: reloj 1s ease-in-out infinite alternate;
+        margin-bottom: 100px;
+        }
+
+        @-webkit-keyframes reloj {
+        from {
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+        }
+        to {
+            text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+        }
+        }
+        /*fecha
+        .fecha {
+        font-size: 80px;
+        color: #fff;
+        font-family: cursive;
+        text-align: center;
+        -webkit-animation: fecha 1s ease-in-out infinite alternate;
+        -moz-animation: fecha 1s ease-in-out infinite alternate;
+        animation: fecha 1s ease-in-out infinite alternate;
+        }
+
+        @-webkit-keyframes fecha {
+        from {
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+        }
+        to {
+            text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+        }
+        }*/
+    </style>
+</head>
+<body>
+    <div class="reloj">
+        10:15:20
+    </div>
+    <!-- <div class="fecha">
+        14/06/2020
+    </div> -->
+    <script>
+        setInterval(() => {
+            var reloj = document.getElementsByClassName("reloj")[0]; //esta trayendo el primer elemento
+            var currentTime = new Date();// la fecha actual
+            var hora = currentTime.getHours();// recoge la hora 
+            var minutos = currentTime.getMinutes();// recoge los minutos
+            var segundo = currentTime.getSeconds();// recoge los segundos
+            if (hora < 10) {// cuando el numero es menor a 10 se pone 00:00:00 asi con todos estos ifs
+                hora = `0${hora}`;
+            }
+            if (minutos < 10) {
+                minutos = `0${minutos}`;
+            }
+            if ( segundo< 10) {
+                segundo = `0${segundo}`;
+            }
+            reloj.innerHTML = `${hora}:${minutos}:${segundo}`;
+        }, 1000);
+        // var fecha = document.getElementsByClassName("fecha")[0];
+        // var fechaHoy = new Date();
+        // var dias = fechaHoy.getUTCDay();
+        // var meses = fechaHoy.getUTCMonth();
+        // var years = fechaHoy.getFullYear();
+        // fecha.innerHTML =`${dias}/${meses}/${years}`
+    </script>
+</body>
+</html>
