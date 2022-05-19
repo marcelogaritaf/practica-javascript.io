@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <b> Nombre del post:</b> <span id="txtpostname">    </span><br>
+    <b>¿Esta completo?</b> <span id="txtquest">    </span><br>
+    <script>
+        
+        function cargarJson(){//funcion donde hace las acciones para cargar la api
+            fetch('https://jsonplaceholder.typicode.com/todos/1').then(response => response.json()).then(jsonCargado);//trae la informacion del json del url
+            
+        }
+        function jsonCargado(json){
+            let postname = document.getElementById("txtpostname")//recoge la informacion del campo del span 
+            postname.innerText = json.title;//con el innerText lo transforma en texto y lo = a la informacion del json con el campo title en este caso
+            let quest = document.getElementById("txtquest") // hace lo mismo que la parte de arriba solo para el campo de la pregunta 
+
+            quest.innerText = json.completed ? "Si, esta completo" : "No, esta completo";// esto es un if de una forma reducida
+
+            // if(json.completed){// lo que realiza el if es mas para poder cambiar la forma de repuesta, ya que esta es un boolean 
+            //     quest.innerText = "Si, esta completo";
+
+            // }else{
+            //     quest.innerText = "No, esta completo";
+            // }
+            
+            console.log(json)
+        }
+        cargarJson();
+    </script>
+</body>
